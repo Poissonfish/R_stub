@@ -1,4 +1,4 @@
-#使用Monte Carle抽樣法估計Pi值
+#使用Monte Carle Method 估計Pi值
 
 ###Introduction
 <img src="Image/Pi.jpg" alt="Drawing"  width="200">
