@@ -3,7 +3,7 @@
 ###Introduction
 在一xy座標平面上存在一個以(0,0)為圓心，半徑為0.5的圓。
 該圓外切一正方形（如圖所示）
-![pi](Image/Pi.jpg =110x)
+<img src="Image/Pi.jpg" alt="Drawing"  width="200">
 
 若我們在該正方形內隨機抽樣數個點座標，並計算落在圓內點的**比例P**
 
