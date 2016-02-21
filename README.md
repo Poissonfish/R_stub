@@ -24,7 +24,7 @@ install.packages(c('ggplot2','scales'))
 library(ggplot2) #plotting package 作圖套件
 library(scales) #for displaying mathmatical symbols in R 使R能顯示數學符號
 ```
-在執行程式前需先指定抽樣點的參數。在此例中抽樣數是從10^4個點，增加到10^8個點時結束迴圈，
+在執行程式前需先指定抽樣點的數量。在此例中抽樣數是從10^4個點，增加到10^8個點時結束迴圈，
 
 每次迴圈結束會增加10^0.0125倍的抽樣數，共抽樣321次。
 
