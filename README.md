@@ -10,7 +10,7 @@
 若我們在該正方形內隨機抽樣數個點座標，並計算落在圓內點的**比例P**
 
 依據**圓面積公式**與**正方形邊長為1**等資訊，可以推論出：
-```r
+```coffee
 r=0.5
 P= (pi*r^2) / 1*1 
 pi= P/(r*2)
@@ -19,7 +19,7 @@ pi= P/(r*2)
 
 但這個點的數目要多少才夠呢？我們希望藉由R來幫助我們驗證這件事情。
 ####Installation 
-```r
+```coffee
 install.packages(c('ggplot2','scales'))
 library(ggplot2) #plotting package 作圖套件
 library(scales) #for displaying mathmatical symbols in R 使R能顯示數學符號
@@ -29,7 +29,7 @@ library(scales) #for displaying mathmatical symbols in R 使R能顯示數學符�
 每次迴圈結束會增加10^0.0125倍的抽樣數，共抽樣321次。
 
 ####Generating estimated pi 
-```r
+```coffee
 exp=321
 break.x=.0125 
 
@@ -46,7 +46,7 @@ for (i in 1:exp){
 }
 ```
 ####Let's see what we got
-```r
+```coffee
 > length(data.pi) #檢驗資料長度
   [1] 321 
 > data.pi
@@ -58,7 +58,7 @@ for (i in 1:exp){
  [36] 3.142227 3.131127 3.148943 3.134067 3.130022 3.139048 3.136801
 ```
 ####Plotting
-```r
+```coffee
 plot=data.frame(epi=data.pi, 
                 exp=10^(4+break.x*(1:e))
                 )
