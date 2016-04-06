@@ -9,15 +9,14 @@
 
 若我們在該正方形內隨機抽樣出數千個點座標，並計算落在圓內點的數量與抽樣數的**比例值P**
 
-依據**圓面積公式**與**正方形邊長為1**等資訊，可以推論出：
+依據**圓面積公式**與**正方形邊長為1**等資訊，可以推估出**pi值**：
 ```coffee
-r=0.5
-P= (pi*r^2) / 1*1 
-pi= P/(r*2)
+number of points in the circle / total number of points = (pi*r^2) / 1*1 
 ```
-如此一來便可得到一**估計pi值**，並期望隨著抽樣的點越多，得到的**估計pi值**越正確。
+並期望隨著抽樣的點越多，得到的**估計pi值**越正確。
 
-但這個點的數目要多少才夠呢？我們希望藉由R來幫助我們驗證這件事情。
+但這個點的數目要多少才夠呢？R可以用來幫助我們進一步討論這個問題。
+
 ####Installation 
 ```coffee
 install.packages(c('ggplot2','scales'))
@@ -30,14 +29,14 @@ library(scales) #for displaying mathmatical symbols in R 使R能顯示數學符�
 
 ####Generating estimated pi 
 ```coffee
-exp=321
-break.x=.0125 
+exp=321 #模擬執行次數
+break.x=.0125 #每次模擬樣本數增加之倍率 
 
 data.pi= c()
 for (i in 1:exp){ 
-  size=10^(3.9875+break.x*i) #指定抽樣數
-  x=runif(size,min=-.5,max=.5) #由uniform dist.中隨機決定抽樣點的x值
-  y=runif(size,min=-.5,max=.5) #由uniform dist.中隨機決定抽樣點的y值
+  size=10^(3.9875+break.x*i) #指定當次模擬抽樣數
+  x=runif(size,min=-.5,max=.5) #由uniform distribution 中隨機決定抽樣點的x值
+  y=runif(size,min=-.5,max=.5) #由uniform distribution 中隨機決定抽樣點的y值
   data=data.frame(x=x,
                   y=y,
                   r=sqrt(x^2+y^2) #計算點至圓心的距離，用來判定是否落在圓內
